@@ -13,9 +13,9 @@ app.use(
   })
 );
 
-app.listen(3003,()=> {
-  console.log('Server has started');
-})
+// app.listen(3003, () => {
+//   console.log('Server has started');
+// })
 
 app.use(express.json());
 app.use(cookieParser());
