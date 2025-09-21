@@ -6,9 +6,17 @@ import { removeUser } from "../utils/userSlice";
 import { removeFeed } from "../utils/feedSlice";
 
 const Navbar = () => {
-  const user = useSelector((store) => store.user);
+  const user = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  // Debug logging
+  console.log("Full store:", useSelector((store) => store));
+  console.log("User from store.user:", useSelector((store) => store.user));
+  console.log("User variable:", user);
+  console.log("Type of user:", typeof user);
+  console.log("Is user null?", user === null);
+  console.log("Is user undefined?", user === undefined);
 
   const handleLogout = async () => {
     try {
@@ -26,7 +34,7 @@ const Navbar = () => {
       <div className="navbar px-5 flex justify-between">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold text-green-400 hover:text-green-300 transition">
-          DevTinder 🔥
+          CodeMatch 🔥
         </Link>
 
         {user && (
