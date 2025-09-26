@@ -5,6 +5,7 @@ const app = express();
 const dotenv = require("dotenv");
 dotenv.config({});
 const cors = require("cors");
+const http = require("http");
 
 app.use(
   cors({
@@ -26,6 +27,7 @@ const profileRouter = require("./src/routes/profile");
 const requestRouter = require("./src/routes/request");
 const userRouter = require("./src/routes/user");
 const paymentRouter = require("./routes/payment");
+const initializeSocket = require("./src/utils/socket");
 
 app.use("/", authRouter);
 app.use("/", profileRouter);
@@ -33,10 +35,14 @@ app.use("/", requestRouter);
 app.use("/", userRouter);
 app.use("/", paymentRouter);
 
+const server = http.createServer(app);
+initializeSocket(server);
+
+
 //database connect before server
 connectDB().then(() => {
   try {
-    app.listen(process.env.PORT, () => {
+    server.listen(process.env.PORT, () => {
       console.log(`Server running on ` + process.env.PORT);
     });
   } catch (error) {
