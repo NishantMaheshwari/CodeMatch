@@ -7,6 +7,7 @@ import appStore from "./utils/appStore";
 import Feed from "./Components/Feed";
 import Connections from "./Components/Connections";
 import Requests from "./Components/Requests";
+import Chat from "./Components/Chat"
 
 function App() {
   return (

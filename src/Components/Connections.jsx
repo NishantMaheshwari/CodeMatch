@@ -42,7 +42,7 @@ const Connections = () => {
     <div className=" text-center my-10">
       <h1 className="font-bold text-3xl text-pink-400">Connections ({connections.length})</h1>
       {connections.map((connection) => {
-        const { _id, firstName, lastName, photoURL, age, gender, about } =
+        const { _id, firstName, lastName, photoUrl, age, gender, about } =
           connection;
 
         return (
@@ -51,7 +51,7 @@ const Connections = () => {
               <img
                 alt="photo"
                 className="w-14 h-14 rounded-full object-contain"
-                src={photoURL}
+                src={photoUrl}
               />
             </div>
             <div className="text-left m-4 p-4 ">

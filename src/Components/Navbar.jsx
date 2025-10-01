@@ -52,7 +52,7 @@ const Navbar = () => {
                 className="btn btn-ghost btn-circle avatar hover:bg-gray-700 transition"
               >
                 <div className="w-10 rounded-full border border-gray-500">
-                  <img alt="User Photo" src={user.photoURL} />
+                  <img alt="User Photo" src={user.photoUrl} />
                 </div>
               </div>
               <ul
